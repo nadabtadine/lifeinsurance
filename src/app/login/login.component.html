@@ -1,0 +1,39 @@
+<h3>Log In now to start buying our products!</h3><hr>
+<form
+ (ngSubmit)="login(f)" 
+ #f="ngForm" 
+ ngNativeValidate>
+ <div *ngIf="!valid" class="alert alert-danger">
+    Invalid Username or Password
+  </div>
+    <div style="width:250px"class="form-group">
+        <input type="text" 
+        ngModel #username="ngModel"
+        required name="username"
+        class="form-control" 
+        placeholder="Username"/>
+        <!-- <div *ngIf="loginForm.controls.username.errors?.required">
+            <span style="color: red;" class="help-block">Username is required*
+            </span>
+        </div> -->
+    </div>
+    <div style="width:250px" class="form-group">
+        <input type="password" 
+        ngModel #password="ngModel"
+        required name="password" class="form-control" placeholder="Password">
+        <!-- <div *ngIf="loginForm.controls.password.errors?.required">
+            <span style="color: red;" class="help-block">Password is required*
+            </span></div> -->
+    </div>
+    <div style="width: 90px" class="form-group">
+       <button class="btn btn-lg btn-info btn-block">
+           Login
+       </button></div>
+
+       <a href routerLink='/signin'>Not registered yet? Sign in to get started.</a>
+    
+</form>
+
+
+
+

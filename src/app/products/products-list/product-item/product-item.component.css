@@ -1,0 +1,10 @@
+a{
+    text-decoration: none;
+    color: darkslategrey;
+}
+
+li{
+    list-style: none;
+}
+
+ul{display:inline;}

@@ -1,0 +1,62 @@
+
+  <div>
+    <div *ngIf="!customer">
+
+      <mat-card>
+      <div>
+
+      <br/>
+      <button mat-raised-button color="warn" (click)="back()">Back</button>
+      <br/>
+      <br/>
+      <mat-form-field>
+        <input matInput #name placeholder="Name"/>
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field>
+        <input matInput #age placeholder="Age"/>
+      </mat-form-field>
+    </div>
+  
+     <div>
+      <mat-radio-group #gender="ngModel" ngModel placeholder="Gender">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+      </mat-radio-group>
+      </div>
+  
+    <div>
+      <mat-form-field>
+        <input matInput #address placeholder="Address"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput #phone_number placeholder="Phone Number"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput #email placeholder="Email"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput #username placeholder="Username"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput #password placeholder="Password"/>
+      </mat-form-field>
+    </div>
+    <br/>
+    <button mat-raised-button color="primary" (click)="add(name.value, age.value,gender.value, address.value, phone_number.value,
+                  email.value, username.value, password.value);">
+                  Sign Up
+                </button>
+   </mat-card>
+   </div>
+  </div>

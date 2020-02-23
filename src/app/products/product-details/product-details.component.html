@@ -1,0 +1,41 @@
+
+<ng-container *ngIf="(product | async) as product">
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="" alt="">
+        </div>
+    </div>
+ 
+    <div class="row">
+        <div style="color: darkred"class="col-xs-12">
+            <h2>
+                {{product.name}}
+            </h2>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h6>
+                {{product.description}}
+            </h6>
+        </div> 
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>
+            Price: {{product.price}} $
+            </h4>
+        </div> 
+    </div>
+
+
+    <div *ngIf="au" class="row">
+        <div class="col-xs-12">
+            <button 
+            style="border-radius: 8px;
+            font-size: 16px;
+            background-color:lightgreen;"> Add to Cart</button>
+        </div> 
+    </div>
+</ng-container>

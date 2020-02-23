@@ -1,0 +1,30 @@
+.footer{
+  height: 60px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color:#eeeeee;
+  font-weight: 600;
+
+
+}
+
+  a {
+    color: whitesmoke;
+    text-decoration: none;
+    margin: inherit;
+  }
+
+  a:hover {
+    display: inline-flex;
+    color:white;
+  }
+  
+  ul{
+    list-style-type: none;
+    display:flex;
+  }
+  li{font-size: x-small;
+  margin: 4px;
+  }

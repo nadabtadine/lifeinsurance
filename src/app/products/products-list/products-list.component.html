@@ -1,0 +1,21 @@
+
+<br>
+<div class="search-product" style="width: 250px;"> 
+    <input class="form-control" 
+    type="serch" 
+    name="search" 
+    [(ngModel)]="searchText" 
+    autocomplte="off" 
+    placeholder="Search a product by name">
+</div> 
+
+<div class="row">
+    <div class="col-xs-12">
+        <ng-container *ngFor= "let product of (products | async )">
+            <app-product-item
+                [product]="product">
+            </app-product-item>
+            <br>
+        </ng-container>
+    </div>
+</div>
