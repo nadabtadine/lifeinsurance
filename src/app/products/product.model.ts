@@ -2,15 +2,15 @@ export class Product{
     public id:number
     public name:string;
     public description:string;
-    public img:string;
+    public image:string;
     public price:number;
 
-    constructor(id:number, name:string,description:string,price:number,img:string){
+    constructor(id:number, name:string,description:string,price:number,image:string){
         id=id;
         name=name;
         description=description;
         price=price;
-        img=img;
+        image=image;
     }
     
 }

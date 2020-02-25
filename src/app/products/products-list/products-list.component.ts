@@ -4,10 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ProductService } from '../product.service';
 import { Observable } from 'rxjs';
 
-@NgModule({
-  imports:[CommonModule]
-})
-
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -15,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductsListComponent implements OnInit {
   products: Observable<Product[]>;
+  filter;
   constructor(private productService: ProductService) {
   }
   ngOnInit() {

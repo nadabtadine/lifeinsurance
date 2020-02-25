@@ -26,6 +26,7 @@ import { HttpModule } from '@angular/http';
 import { AuthGuardService } from './customer/auth-guard.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ProductService } from './products/product.service';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -42,8 +43,10 @@ import { ProductService } from './products/product.service';
     AddtocartComponent,
     LoginComponent,
     SigninComponent,
+    FilterPipe,
     PrivacypolicyComponent,
     ContactusComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -55,6 +58,7 @@ import { ProductService } from './products/product.service';
     HttpModule,
     CustomMaterialModule,
     BrowserAnimationsModule,
+    
     JwtModule.forRoot({
       config: {
         tokenGetter() {
@@ -62,9 +66,9 @@ import { ProductService } from './products/product.service';
         }
       }
     }),
-
-
   ],
+
+  exports:[FilterPipe],
   providers: [AccountcreationService, AccountverificationService, AuthGuardService,ProductService],
   bootstrap: [AppComponent]
 })

@@ -1,17 +1,24 @@
 
 <br>
-<div class="search-product" style="width: 250px;"> 
-    <input class="form-control" 
-    type="serch" 
-    name="search" 
-    [(ngModel)]="searchText" 
-    autocomplte="off" 
-    placeholder="Search a product by name">
-</div> 
+
+<!-- <form class="form-inline md-form form-sm">
+    <input class="form-control form-control-sm mr-3 w-75" 
+    style="font-size: x-large; min-inline-size: max-content;"
+    type="text"
+    
+    placeholder="Search for a product" 
+    aria-label="Search"
+    mdbInput>cls
+    <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
+</form> -->
+
+<input type="search"  
+placeholder="Search for a product name"
+[(ngModel)]="filter">
 
 <div class="row">
     <div class="col-xs-12">
-        <ng-container *ngFor= "let product of (products | async )">
+        <ng-container *ngFor= "let product of (products | async )| filter:filter">
             <app-product-item
                 [product]="product">
             </app-product-item>
