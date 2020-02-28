@@ -43,7 +43,7 @@
     border: 1px solid #eee;
     background-color: #fafafa;
     height: 40px;
-    width: 200px;
+    width: 300px;
     margin: 0 8px 16px;
     padding: 16px;
     display: flex;
@@ -51,7 +51,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-    line-height: 24px;
+    line-height: 20px;
   }
 
   .card-container .card:not(:last-child) {
@@ -60,7 +60,7 @@
 
   .card.card-small {
     height: 16px;
-    width: 168px;
+    width: 210px;
   }
 
   .card-container .card:not(.highlight-card) {
@@ -85,7 +85,9 @@
     min-width: 30%;
     position: relative;
     align-content: center;
+    height: fit-content;
   }
+
 
 .divv {
   width:100%;

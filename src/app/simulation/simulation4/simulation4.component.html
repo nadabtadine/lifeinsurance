@@ -1,0 +1,116 @@
+
+    <form class="" 
+    action="" 
+    method="post" 
+    name="" 
+    id="" 
+    accept-charset="utf-8" 
+    autocomplete="on" 
+    novalidate="true">
+
+            <div class="form-header-group  header-default">
+              <div class="header-text httal htvam">
+                <h2>
+                  Please answer all the questions
+                </h2>
+              </div>
+            </div>
+
+            <div>
+                <label>1. Please enter your total house number</label>
+                <br>
+                <input type="text" 
+                class="form-radio-other-input form-textbox" 
+                name="age" data-otherhint="h" 
+                size="15" 
+                id="h" 
+                tabindex="-1">
+            </div>
+                <br>
+
+                <div>
+                    <label>2. Please enter your total cars number</label>
+                    <br>
+                    <input type="text" 
+                    class="form-radio-other-input form-textbox" 
+                    name="age" data-otherhint="c" 
+                    size="15" 
+                    id="c" 
+                    tabindex="-1">
+                </div>
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="loans">3. Have you ever taken any banks loans?</label>
+                        <div class="input-group">
+                          <mat-radio-group name="loans" >
+                            <div class="form-check">
+                              <mat-radio-button ngDefaultControl value="true" id="loansyes">
+                                  Yes
+                                </mat-radio-button>
+                            </div>
+                            <div class="form-check">
+                              <mat-radio-button ngDefaultControl value="false" id="loansno">
+                                  No
+                                </mat-radio-button>
+                            </div>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+
+                      <label class="form-label form-label-left form-label-auto">4. Choose your marial status</label>
+                      <div class="form-input">
+                      <select class="form-dropdown" name="q7_2How7" style="width:150px" data-component="dropdown" required>
+                      <option disabled  hidden selected></option>
+                      <option value="s">Single</option>
+                      <option value="e">Engaged</option>
+                      <option value="m">Married - Dont Have Children</option>
+                      <option value="mc">Married - Have Children</option>
+                      <option value="d">Divorced</option>
+                      <option value="w">Widower</option>
+                      </select>
+                      </div>
+                      <br>
+                      <div>
+                        <label>5. Please enter your children number (0 if you don't have)</label>
+                        <br>
+                        <input type="text" 
+                        class="form-radio-other-input form-textbox" 
+                        name="age" data-otherhint="children" 
+                        size="15" 
+                        id="children" 
+                        tabindex="-1">
+                    </div>
+                        <br>
+
+                        <div>
+                            <label>6. Please enter your family income per month (including yours if you work)</label>
+                            <br>
+                            <input type="text" 
+                            class="form-radio-other-input form-textbox" 
+                            name="age" data-otherhint="income" 
+                            size="15" 
+                            id="income" 
+                            tabindex="-1"> $
+                            </div>
+                            <br>
+
+                            <div>
+                                <label>7. Please enter your current address</label>
+                                <br>
+                                <input type="text" 
+                                class="form-radio-other-input form-textbox" 
+                                name="age" data-otherhint="address" 
+                                size="15" 
+                                id="address" 
+                                tabindex="-1"> 
+                                </div>
+                                <br>
+              
+            
+        <button mat-raised-button color="primary" >
+            Submit
+        </button>
+
+
+    </form>

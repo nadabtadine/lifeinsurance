@@ -1,0 +1,143 @@
+
+    <form class="col-md-12 simulation2" 
+    (ngSubmit)="getSimulation2(f)" 
+    #f="ngForm" 
+    ngNativeValidate>
+
+            <div class="form-header-group  header-default">
+              <div class="header-text httal htvam">
+                <h2>
+                  Please answer all the questions
+                </h2>
+              </div>
+            </div>
+
+            <div>
+                <label>1. What is your age?</label>
+                <br>
+                <input type="text" 
+                required
+                ngModel
+                #age="ngModel"
+                class="form-radio-other-input form-textbox" 
+                name="age"
+                size="15" 
+                id="age" 
+                tabindex="-1">
+                </div>
+                <br>
+            
+            <label class="form-label form-label-left form-label-auto">2. Choose your marial status</label>
+            <div class="form-input">
+            <select 
+            required
+            ngModel
+            #marial="ngModel"
+            class="form-dropdown" 
+            name="marial" 
+            style="width:150px" 
+            data-component="dropdown">
+            <option disabled  hidden selected></option>
+            <option ngValue="s">Single</option>
+            <option ngValue="e">Engaged</option>
+            <option ngValue="m">Married - Dont Have Children</option>
+            <option ngValue="mc">Married - Have Children</option>
+            <option ngValue="d">Divorced</option>
+            <option ngValue="w">Widower</option>
+            </select>
+            </div>
+            <br>
+
+            <div>
+                <label>3. Please enter your children number (0 if you don't have)</label>
+                <br>
+                <input type="text" 
+                required
+                ngModel
+                #nchildren="ngModel"
+                class="form-radio-other-input form-textbox" 
+                name="nchildren"
+                size="nchildren" 
+                id="children" 
+                tabindex="-1">
+            </div>
+                <br>
+
+                <div>
+                    <label>4. Please enter your family income per month (including yours if you work)</label>
+                    <br>
+                    <input type="text" 
+                    required
+                    ngModel
+                    #income="ngModel"
+                    class="form-radio-other-input form-textbox" 
+                    name="income"
+                    size="15" 
+                    id="income" 
+                    tabindex="-1"> $
+                    </div>
+                    <br>
+
+                    <div>
+                        <label>5. Please enter your current address</label>
+                        <br>
+                        <input type="text" 
+                        required
+                        ngModel
+                        #address="ngModel"
+                        class="form-radio-other-input form-textbox" 
+                        name="address"
+                        size="15" 
+                        id="address" 
+                        tabindex="-1"> 
+                        </div>
+                        <br>
+      
+                        <div class="mb-3">
+                            <label for="loans">6. Have you recently took any banks loans?</label>
+                            <div class="input-group">
+                              <mat-radio-group 
+                              required
+                              name="loans" 
+                              ngModel
+                              #loans="ngModel">
+                                <div class="form-check">
+                                  <mat-radio-button ngDefaultControl value="true" id="loansyes">
+                                      Yes
+                                    </mat-radio-button>
+                                </div>
+                                <div class="form-check">
+                                  <mat-radio-button ngDefaultControl value="false" id="loansno">
+                                      No
+                                    </mat-radio-button>
+                                </div>
+                              </mat-radio-group>
+                            </div>
+                          </div>
+
+                          
+                          <label class="form-label form-label-left form-label-auto">7. Choose your employment status</label>
+                          <div class="form-input">
+                          <select 
+                          required
+                          ngModel
+                          #empstatus="ngModel"
+                          class="form-dropdown" 
+                          name="empstatus" 
+                          style="width:150px" 
+                          data-component="dropdown">
+                          <option disabled  hidden selected></option>
+                          <option ngValue="pt">Part time</option>
+                          <option ngValue="ft">Full time</option>
+                          <option ngValue="u">Unemployed</option>
+                          <option ngValue="r">Retired</option>
+                          </select>
+                          </div>
+                          <br>
+                          <br>
+                
+<button mat-raised-button color="primary" >
+Submit
+</button>
+
+     </form>

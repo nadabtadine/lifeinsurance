@@ -1,0 +1,223 @@
+
+    <form class="col-md-12 simulation1"
+    (ngSubmit)="getSimulation1(f)" 
+    #f="ngForm" 
+    ngNativeValidate>
+
+  <div class="form-header-group  header-default">
+    <div class="header-text httal htvam">
+      <h2>
+         Please answer all the questions
+      </h2>
+    </div>
+  </div>   
+      
+        <div class="mb-3">
+            <label for="cancer">1. Do you have cancer?</label>
+            <div class="input-group">
+              <mat-radio-group
+              required
+               ngModel
+               #cancer="ngModel" 
+               name="cancer"
+               id="cancer" 
+               (change)="change($event)">
+                <div class="form-check">
+                  <mat-radio-button value="true" ngDefaultControl>
+                      Yes
+                  </mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button value="false" ngDefaultControl>
+                      No
+                  </mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+  
+          <ng-container *ngIf="showFields">
+            <label class="form-label form-label-left form-label-auto"for="ctype">
+              2. If yes, what is your cancer type? 
+            </label>
+            <div class="form-input" required>
+              <select 
+              ngModel
+               #ctype="ngModel"
+              class="form-control" id="ctype" name="ctype" style="width:150px"
+              data-component="dropdown">
+                <option ngValue="">  </option>
+                <option ngValue="Bladder cancer"> Bladder cancer </option>
+                <option ngValue="Brain cancer">Brain/Tumors on the brain </option>
+                <option ngValue="Breast cancer"> Breast cancer </option>
+                <option ngValue="Bone cancer">Bone cancer/Sarcoma</option>
+                <option ngValue="Cervical cancer"> Cervical cancer </option>
+                <option ngValue="Childhood cancer"> Childhood cancer </option>
+                <option ngValue="Colorectal cancer"> Colorectal cancer </option>
+                <option ngValue="Colon cancer"> Colon cancer</option>
+                <option ngValue="Endometrial cancer (uterus)"> Endometrial cancer (uterus) </option>
+                <option ngValue="Eusophageal cancer"> Eusophageal cancer</option>
+                <option ngValue="Head/neck cancer"> Head/neck cancer</option>
+                <option ngValue="Lung cancer"> Lung cancer</option>
+                <option ngValue="Kidney cancer"> Kidney cancer</option>
+                <option ngValue="Leiomyosarcoma cancer"> Leiomyosarcoma cancer </option>
+                <option ngValue="Leukimia cancer"> Leukimia cancer </option>
+                <option ngValue="Liver cancer"> Liver cancer</option>
+                <option ngValue="Lung cancer"> Lung cancer</option>
+                <option ngValue="Lymphoma cancer"> Lymphoma cancer</option>
+                <option ngValue="Melanoma cancer"> Melanoma cancer</option>
+                <option ngValue="Multiple myeloma cancer"> Multiple myeloma cancer</option>
+                <option ngValue="Ovarian cancer"> Ovarian cancer </option>
+                <option ngValue="Pancreatic">Pancreatic cancer </option>
+                <option ngValue="Pediatric oncology and hematology"> Pediatric oncology and hematology </option>
+                <option ngValue="Prostate cancer"> Prostate cancer </option>
+                <option ngValue="Skin cancer">Skin cancer </option>
+                <option ngValue="Stomach cancer"> Stomach cancer </option>
+                <option ngValue="Testicular cancer">Testicular cancer </option>
+                <option ngValue="Throat cancer (larynx)">Throat cancer (larynx) </option>
+                <option ngValue="Thyroid cancer"> Thyroid cancer </option>
+                <option ngValue="Oral cavity cancer"> Oral cavity cancer </option>
+                <option ngValue="Uterine cervical cancer"> Uterine cervical cancer </option>
+                <option ngValue="Other"> Other </option>
+              </select>
+            </div>
+            <br>
+
+            
+            <label class="form-label form-label-left form-label-auto"for="cstage">
+              3. What is your cancer stage?</label>
+              <div class="form-input"  required>
+                <select 
+                ngModel
+                #cstage="ngModel"name="cstage" class="form-control" id="cstage"style="width:150px"data-component="dropdown">
+                  <option ngValue=""></option>
+                  <option ngValue="1">1</option>
+                  <option ngValue="2">2</option>
+                  <option ngValue="3">3</option>
+                  <option ngValue="4">4</option>
+                </select>
+              </div>
+        <br>
+  
+          <div class="mb-3">
+            <label for="chemo">4. Are you currently on chemo therapy?</label>
+            <div class="input-group">
+              <mat-radio-group 
+              required
+              name="chemo" 
+              ngModel
+               #chemo="ngModel">
+                <div class="form-check">
+                  <mat-radio-button ngDefaultControl value="true" id="chemoyes">
+                      Yes
+                    </mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button ngDefaultControl value="false" id="chemono">
+                      No
+                    </mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+        </ng-container>    
+          
+      
+
+          <div class="mb-3">
+            <label for="medication">6. Do you take any prescription medications?</label>
+            <div class="input-group">
+              <mat-radio-group 
+              required
+              name="medication"
+              ngModel
+               #medication="ngModel">
+                <div class="form-check">
+                  <mat-radio-button ngDefaultControl value="true" id="medicationyes">Yes</mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button value="false" ngDefaultControl id="medicationno">No</mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="disease">7. Have you ever had any health conditions such as heart diesease, diabetes..?</label>
+            <div class="input-group">
+              <mat-radio-group 
+              required
+              name="disease"
+              ngModel
+               #disease="ngModel">
+                <div class="form-check">
+                  <mat-radio-button value="true" ngDefaultControl id="diseaseyes">Yes</mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button value="false" id="diseaseno" ngDefaultControl>No</mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+   
+          <div class="mb-3">
+            <label for="smoker">8. Are you a smoker</label>
+            <div class="input-group">
+              <mat-radio-group 
+              required
+              name="smoker"
+              ngModel
+               #smoker="ngModel">
+                <div class="form-check">
+                  <mat-radio-button ngDefaultControl value="true" id="smokeryes">Yes</mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button value="false" ngDefaultControl id="smokerno">No</mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="operation">9. Does your case include having one ore more operations?</label>
+            <div class="input-group">
+              <mat-radio-group 
+              required
+              name="operation"
+              ngModel
+              #operation="ngModel">
+                <div class="form-check">
+                  <mat-radio-button ngDefaultControl value="true" id="opyes">Yes</mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button value="false" ngDefaultControl id="opno">No</mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+ 
+          <div class="mb-3">
+            <label for="class">10. Do you demand first class hospitals?</label>
+            <div class="input-group">
+              <mat-radio-group 
+              required
+              name="class"
+              ngModel
+              #fclass="ngModel">
+                <div class="form-check">
+                  <mat-radio-button ngDefaultControl value="true" id="classyes">Yes</mat-radio-button>
+                </div>
+                <div class="form-check">
+                  <mat-radio-button value="false" ngDefaultControl id="classno">No</mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+
+          
+          <button mat-raised-button color="primary" type="submit" >
+          Submit
+         </button>
+
+     </form>

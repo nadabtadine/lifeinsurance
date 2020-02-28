@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ProductService{
  
-private Url = 'http://localhost:9091/api2';
+private Url = 'http://localhost:9095/api2';
 
 constructor(private http :HttpClient){}
 
@@ -19,6 +19,7 @@ getProductById(productId: string): Observable<Product> {
   return this.http.get<Product>(this.Url + `/products/` + productId);
 }
 
-
-
+getProductsByType(productype:number):Observable<Product[]>{
+    return this.http.get<Product[]>(this.Url + `/products/type/` + productype);
+  }
 }

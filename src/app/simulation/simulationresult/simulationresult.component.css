@@ -1,0 +1,7 @@
+.price{
+  border-color: goldenrod;
+  padding: 50px;
+  border-radius: 300px 200px;
+  background-color: rgb(245, 243, 122);
+  width: fit-content;
+}

@@ -1,9 +1,33 @@
+<div _ngcontent-c9="" class="row box-shadow" >
+    <div _ngcontent-c9="" class="col-md-6">
+    <img _ngcontent-c9="" class="lib-img-show" style="width:80px" src="./assets\caution blue.png">
+    <div _ngcontent-c9="" class="lib-row lib-header text-warning">
+ Prerequisite
+    <div _ngcontent-c9="" class="lib-header-seperator"></div>
+    </div>
+    <div _ngcontent-c9="" class="lib-row lib-desc">
+    <div _ngcontent-c8="" class="exclusions">
+    Please note that to be able to access this plan you should be:
+    <ul _ngcontent-c8="">
+    <li _ngcontent-c8="">Lebanese.</li>
+    <li _ngcontent-c8="">Currently living in lebanon.</li>
+    <li _ngcontent-c8="">Not insured by another company.</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
 
 <ng-container *ngIf="(product | async) as product">
+
     <div class="row">
-        <div class="col-xs-12">
-            <img src="" alt="">
-        </div>
+            <span>
+            <img  
+            img [src]="product.image" 
+            alt="" 
+            width="600" 
+            height="300">
+            </span>
     </div>
  
     <div class="row">
@@ -13,8 +37,12 @@
             </h2>
         </div> 
     </div>
+    <br>
+    <br>
+
     <div class="row">
         <div class="col-xs-12">
+            <h4>Description</h4>
             <h6>
                 {{product.description}}
             </h6>
@@ -23,9 +51,9 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h4>
+            <h5>
             Starting price: {{product.price}} $
-            </h4>
+            </h5>
         </div> 
     </div>
 
@@ -38,4 +66,34 @@
             background-color:lightgreen;"> Add to Cart</button>
         </div> 
     </div>
+
+<br>
+
+<div _ngcontent-c9="" class="row box-shadow" >
+<div _ngcontent-c9="" class="col-md-6">
+<img _ngcontent-c9="" class="lib-img-show" style="width:80px" src="./assets\caution.png">
+<div _ngcontent-c9="" class="lib-row lib-header text-danger">
+Exclusions
+<div _ngcontent-c9="" class="lib-header-seperator"></div>
+</div>
+<div _ngcontent-c9="" class="lib-row lib-desc">
+<div _ngcontent-c8="" class="exclusions">
+Please note that this plan does not include accidental death like:
+<ul _ngcontent-c8="">
+<li _ngcontent-c8="">Committing suicide.</li>
+<li _ngcontent-c8="">Committing or attempting to commit a criminal act.</li>
+<li _ngcontent-c8="">Operating a vehicle while your blood alcohol level is more than the legal limit.</li>
+<li _ngcontent-c8="">Being on any type of illegal drugs</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+        <a href [routerLink]="'/simulation/'+ product.category"> 
+            <button mat-raised-button color="warn">
+                 Make a free simulation
+            </button>
+        </a>
+      
 </ng-container>
