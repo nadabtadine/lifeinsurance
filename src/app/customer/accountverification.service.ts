@@ -23,13 +23,15 @@ export class AccountverificationService {
     login(c) {
         return this.http.post(this.Url + '/login', JSON.stringify(c), this.options)
         //projection function
+        // .shareReplay()
             .pipe(map(response => {
                 const payload = response.text() ? response.json() : null;
-                //const token = response.headers.get('Token');
+                // const t = response.headers.get('Token');
                 const token = true;
                 if (!!payload && !payload.errorCode && token) {
-                    //localStorage.setItem('token', token);
-                    localStorage.setItem('user', JSON.stringify(payload));
+                    // localStorage.setItem('token', t);
+                    // console.log(t);
+                    localStorage.setItem('customer', JSON.stringify(payload));
                     this.current.next(payload);
                     return payload;
                 }
@@ -42,6 +44,7 @@ export class AccountverificationService {
         localStorage.removeItem('user');
         this.current.next(null);
     }
+    
     isAuthenticated(): boolean {
 
         const token = localStorage.getItem('token');
@@ -50,9 +53,18 @@ export class AccountverificationService {
         return !isExpired;
     }
 
+    get isLoggedIn() {
+        const user = localStorage.getItem('user');
+        return !!user;
+    }
+
 
     get loggedinCustomer() {
         return JSON.parse(localStorage.getItem('user'));
+    }
+
+    public get currentUserValue(): Customer {
+        return this.current.value;
     }
 
 }

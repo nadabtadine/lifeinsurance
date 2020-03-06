@@ -1,17 +1,58 @@
-<!-- Toolbar -->
+<!--  
 <div class="toolbar">
     <img
-      width="70"
-      alt="Insurance Logo"
-      src="assets\images.jpg"
-    />
+          width="70"
+          alt="Insurance Logo"
+          src="assets\images.jpg"
+        />  
     
     <h2>Welcome to our site!</h2>
     
     <span style="margin :0 auto"></span>
+
  <div style="margin-right:4px">
      <ul>
       <li><a routerLink="../login" >Log In</a></li>
        <li><a routerLink="../signin" >Sign Up</a></li>
      </ul>
-   
+</div>
+
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" 
+id="ftco-navbar">
+  <div class="container">
+      <!-- <img
+      width="70"
+      alt="Insurance Logo"
+      src="assets\images.jpg"
+    />  -->
+    <span style="width: 20px">  </span> 
+    <h3>  Welcome to our site!</h3>
+    
+    <button class="navbar-toggler" 
+    type="button" 
+    data-toggle="collapse" 
+    data-target="#ftco-nav" 
+    aria-controls="ftco-nav" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> 
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li><a routerLink="../" >Home</a></li>
+        <li><a routerLink="../products" >All products</a></li>
+        <ng-container *ngIf="!(customer$ | async)">
+          <li><a routerLink="../login" >Log In</a></li>
+          <li><a routerLink="../signin" >Sign Up</a></li>
+        </ng-container>
+        <ng-container *ngIf="customer$ | async">
+          <li><a routerLink="../shoppingcart" ><i class="fas fa-shopping-cart"></i></a></li>
+          <li><button (click)="logout()">Logout</button></li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -19,6 +19,8 @@ import { Simulation3Component } from './simulation/simulation3/simulation3.compo
 import { Simulation2Component } from './simulation/simulation2/simulation2.component';
 import { Simulation4Component } from './simulation/simulation4/simulation4.component';
 import { SimulationresultComponent } from './simulation/simulationresult/simulationresult.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { ShoppingCartComponent } from './customer/shoppingCart/shopppingCart.component';
 
 const routes: Routes = [
   { path:'', component: MenuComponent},
@@ -32,6 +34,9 @@ const routes: Routes = [
   { path:'products', component: ProductsComponent},
   { path:'signin',component: SigninComponent},
   { path:'login' ,component: LoginComponent},
+  { path:'invoices' ,component: InvoiceComponent},
+  { path:'shoppingcart' ,component: ShoppingCartComponent},
+  { path:'shoppingcart/:id' ,component: ShoppingCartComponent},
   { path:'result/:response' ,component: SimulationresultComponent},
   { path:'contactus',component: ContactusComponent},
   { path:'privacypolicy', component: PrivacypolicyComponent},

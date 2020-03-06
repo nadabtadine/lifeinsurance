@@ -5,6 +5,7 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* position: relative; */
   }
 
   h1,
@@ -30,6 +31,15 @@
     align-items: center;
   }
  
+  .full{
+    max-width: 100%;
+    width: 100%;
+    padding-right: 0px; 
+    padding-left: 0px; 
+    margin-right: 0px; 
+    margin-left: 0px;
+  }
+   
 
   .card-container {
     display: flex;
@@ -67,3 +77,10 @@
   }
 
 
+app-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}

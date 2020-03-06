@@ -24,7 +24,7 @@ export class SigninComponent implements OnInit {
     name = name.trim();
     age=age;
     address = address.trim();
-    gender = gender.trim();
+    gender = gender;
     phone_number = phone_number.trim();
     email = email.trim();
     username = username.trim();

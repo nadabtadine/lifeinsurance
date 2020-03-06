@@ -8,21 +8,24 @@
     
     placeholder="Search for a product" 
     aria-label="Search"
-    mdbInput>cls
+    mdbInput>
     <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
 </form> -->
 
+
+<div>
 <input type="search"  
+class="s"
 placeholder="Search for a product name"
 [(ngModel)]="filter">
 
-<div class="row">
-    <div class="col-xs-12">
+        <div class="card-group" style="display: flex;">
+            
+  
         <ng-container *ngFor= "let product of (products | async ) | filter:filter">
             <app-product-item
                 [product]="product">
             </app-product-item>
-            <br>
         </ng-container>
     </div>
 </div>

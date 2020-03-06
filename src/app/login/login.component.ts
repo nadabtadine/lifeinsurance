@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
-    this.authService.login(form.value)
+    this.authService.login(form.value) 
       .subscribe(
         response => {
           if (response) {
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
           } 
           else{this.valid=false;}
         });
-
+      
   }
 }
 

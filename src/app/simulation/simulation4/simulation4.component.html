@@ -1,12 +1,8 @@
 
-    <form class="" 
-    action="" 
-    method="post" 
-    name="" 
-    id="" 
-    accept-charset="utf-8" 
-    autocomplete="on" 
-    novalidate="true">
+ <form class="col-md-12 simulation4" 
+ (ngSubmit)="getSimulation4(f)" 
+ #f="ngForm" 
+ ngNativeValidate>
 
             <div class="form-header-group  header-default">
               <div class="header-text httal htvam">
@@ -20,10 +16,13 @@
                 <label>1. Please enter your total house number</label>
                 <br>
                 <input type="text" 
+                required
+                ngModel
+                #house="ngModel"
                 class="form-radio-other-input form-textbox" 
-                name="age" data-otherhint="h" 
+                name="house"
                 size="15" 
-                id="h" 
+                id="house" 
                 tabindex="-1">
             </div>
                 <br>
@@ -33,9 +32,12 @@
                     <br>
                     <input type="text" 
                     class="form-radio-other-input form-textbox" 
-                    name="age" data-otherhint="c" 
+                    required
+                    ngModel
+                    #car="ngModel"
+                    name="car"
                     size="15" 
-                    id="c" 
+                    id="car" 
                     tabindex="-1">
                 </div>
                     <br>
@@ -43,7 +45,11 @@
                     <div class="mb-3">
                         <label for="loans">3. Have you ever taken any banks loans?</label>
                         <div class="input-group">
-                          <mat-radio-group name="loans" >
+                          <mat-radio-group 
+                          required
+                          ngModel
+                          #loans="ngModel"
+                          name="loans" >
                             <div class="form-check">
                               <mat-radio-button ngDefaultControl value="true" id="loansyes">
                                   Yes
@@ -60,14 +66,21 @@
 
                       <label class="form-label form-label-left form-label-auto">4. Choose your marial status</label>
                       <div class="form-input">
-                      <select class="form-dropdown" name="q7_2How7" style="width:150px" data-component="dropdown" required>
+                      <select 
+                      required
+                      ngModel
+                      #marial="ngModel"
+                      class="form-dropdown" 
+                      name="marial" 
+                      style="width:150px"
+                      data-component="dropdown" >
                       <option disabled  hidden selected></option>
-                      <option value="s">Single</option>
-                      <option value="e">Engaged</option>
-                      <option value="m">Married - Dont Have Children</option>
-                      <option value="mc">Married - Have Children</option>
-                      <option value="d">Divorced</option>
-                      <option value="w">Widower</option>
+                      <option ngValue="s">Single</option>
+                      <option ngValue="e">Engaged</option>
+                      <option ngValue="m">Married - Dont Have Children</option>
+                      <option ngValue="mc">Married - Have Children</option>
+                      <option ngValue="d">Divorced</option>
+                      <option ngValue="w">Widower</option>
                       </select>
                       </div>
                       <br>
@@ -75,10 +88,13 @@
                         <label>5. Please enter your children number (0 if you don't have)</label>
                         <br>
                         <input type="text" 
+                        required
+                        ngModel
+                        #nchild="ngModel"
                         class="form-radio-other-input form-textbox" 
-                        name="age" data-otherhint="children" 
+                        name="nchild"
                         size="15" 
-                        id="children" 
+                        id="nchild" 
                         tabindex="-1">
                     </div>
                         <br>
@@ -87,8 +103,11 @@
                             <label>6. Please enter your family income per month (including yours if you work)</label>
                             <br>
                             <input type="text" 
+                            required
+                            ngModel
+                            #income="ngModel"
                             class="form-radio-other-input form-textbox" 
-                            name="age" data-otherhint="income" 
+                            name="income"
                             size="15" 
                             id="income" 
                             tabindex="-1"> $
@@ -99,8 +118,11 @@
                                 <label>7. Please enter your current address</label>
                                 <br>
                                 <input type="text" 
+                                required
+                                ngModel
+                                #address="ngModel"
                                 class="form-radio-other-input form-textbox" 
-                                name="age" data-otherhint="address" 
+                                name="address"
                                 size="15" 
                                 id="address" 
                                 tabindex="-1"> 

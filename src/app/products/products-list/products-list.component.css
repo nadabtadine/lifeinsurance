@@ -1,0 +1,7 @@
+.s{
+    inline-size: -webkit-fill-available;
+    height: 40px; 
+    width: 300px;
+     margin-left: 15px;
+}
+

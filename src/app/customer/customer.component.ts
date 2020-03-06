@@ -14,7 +14,6 @@ import { ProductService } from '../products/product.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent{
-
   current:Customer;
 
   constructor(
@@ -26,12 +25,4 @@ export class CustomerComponent{
 
   }
 
-  logout(){
-    this.vs.logout();
-    this.router.navigateByUrl("");
-  }
-
-  simulation(){}
-
-  
 }

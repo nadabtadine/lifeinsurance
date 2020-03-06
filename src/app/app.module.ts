@@ -6,7 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { CustomerComponent } from './customer/customer.component';
-import { AddtocartComponent } from './customer/addtocart/addtocart.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { ProductItemComponent } from './products/products-list/product-item/product-item.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
@@ -23,11 +22,9 @@ import { CustomMaterialModule } from './customer-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccountverificationService } from './customer/accountverification.service';
 import { HttpModule } from '@angular/http';
-import { AuthGuardService } from './customer/auth-guard.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ProductService } from './products/product.service';
 import { FilterPipe } from './filter.pipe';
-
 import { HealthinsuranceComponent } from './products/healthinsurance/healthinsurance.component';
 import { IndividualinsuranceComponent } from './products/individualinsurance/individualinsurance.component';
 import { EducationalComponent } from './products/educational/educational.component';
@@ -38,8 +35,11 @@ import { Simulation4Component } from './simulation/simulation4/simulation4.compo
 import { Simulation2Component } from './simulation/simulation2/simulation2.component';
 import { SimulationService } from './simulation/simulation.service';
 import { SimulationresultComponent } from './simulation/simulationresult/simulationresult.component';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { InvoiceService } from './invoice/invoice.service';
+import { ShoppingCartComponent } from './customer/shoppingCart/shopppingCart.component';
+import { ProductDetailsComponentDialog } from './products/product-details/product-details-dialog.component';
+import { ShoppingCartService } from './customer/shoppingCart/shoppingCart.service';
 
 @NgModule({
   schemas: [
@@ -50,14 +50,13 @@ import { SimulationresultComponent } from './simulation/simulationresult/simulat
     HeaderComponent,
     FooterComponent,
     ContactusComponent,
-
     MenuComponent,
     CustomerComponent,
     ProductsComponent,   
     ProductsListComponent,
     ProductItemComponent,
     ProductDetailsComponent,
-    AddtocartComponent,
+    ShoppingCartComponent,
     LoginComponent,
     SigninComponent,
     FilterPipe,
@@ -72,8 +71,9 @@ import { SimulationresultComponent } from './simulation/simulationresult/simulat
     Simulation2Component,
     Simulation3Component,
     Simulation4Component,
-    
+    ProductDetailsComponentDialog
   ],
+  
   imports: [
     CommonModule,
     BrowserModule,
@@ -84,6 +84,7 @@ import { SimulationresultComponent } from './simulation/simulationresult/simulat
     HttpModule,
     CustomMaterialModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     
     JwtModule.forRoot({
       config: {
@@ -95,7 +96,7 @@ import { SimulationresultComponent } from './simulation/simulationresult/simulat
   ],
 
   exports:[FilterPipe, AsyncPipe],
-  providers: [AccountcreationService, AccountverificationService, AuthGuardService,ProductService,SimulationService],
+  providers: [AccountcreationService,AccountverificationService,ProductService,SimulationService,InvoiceService,ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

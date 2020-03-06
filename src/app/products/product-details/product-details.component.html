@@ -1,4 +1,7 @@
-<div _ngcontent-c9="" class="row box-shadow" >
+<!-- <div class="container" 
+style="background-color: aliceblue; min-width: -webkit-fill-available;">
+
+<div _ngcontent-c9="" class="row box-shadow  " >
     <div _ngcontent-c9="" class="col-md-6">
     <img _ngcontent-c9="" class="lib-img-show" style="width:80px" src="./assets\caution blue.png">
     <div _ngcontent-c9="" class="lib-row lib-header text-warning">
@@ -16,22 +19,28 @@
     </div>
     </div>
     </div>
-    </div>
+   </div>
+   </div> -->
 
+
+
+<br><br>
+
+<div class="container" 
+     style="border: groove;">
 <ng-container *ngIf="(product | async) as product">
 
-    <div class="row">
-            <span>
-            <img  
-            img [src]="product.image" 
-            alt="" 
-            width="600" 
-            height="300">
-            </span>
+    <div class="row" style="justify-content: center;">
+        <span>
+      
+            <img img [src]="product.image" alt="">
+          
+        </span>
     </div>
  
-    <div class="row">
-        <div style="color: darkred"class="col-xs-12">
+  
+    <div class="row" style="justify-content: center;">
+        <div style="color:black;margin-top: 10px;" class="col-xs-12">
             <h2>
                 {{product.name}}
             </h2>
@@ -40,60 +49,73 @@
     <br>
     <br>
 
-    <div class="row">
+    <div class="row" style="display: contents;">
         <div class="col-xs-12">
+          
             <h4>Description</h4>
             <h6>
                 {{product.description}}
             </h6>
+        </div>
         </div> 
-    </div>
 
-    <div class="row">
+
+    <div class="row" style="display: contents;">
         <div class="col-xs-12">
             <h5>
             Starting price: {{product.price}} $
             </h5>
         </div> 
-    </div>
+  
 
 
-    <div *ngIf="au" class="row">
+    <ng-container *ngIf="customer$ | async">
         <div class="col-xs-12">
-            <button 
+            <button class="add"(click)="add()"
             style="border-radius: 8px;
             font-size: 16px;
             background-color:lightgreen;"> Add to Cart</button>
         </div> 
+    </ng-container>
+</div>
+
+    <br>
+
+    <div class="row" style="justify-content: center;margin-bottom: 10px;">
+    <a href [routerLink]="'/simulation/'+ product.category"> 
+        <button mat-raised-button color="warn">
+             Make a free simulation
+        </button>
+    </a>
     </div>
 
-<br>
-
-<div _ngcontent-c9="" class="row box-shadow" >
-<div _ngcontent-c9="" class="col-md-6">
-<img _ngcontent-c9="" class="lib-img-show" style="width:80px" src="./assets\caution.png">
-<div _ngcontent-c9="" class="lib-row lib-header text-danger">
-Exclusions
-<div _ngcontent-c9="" class="lib-header-seperator"></div>
-</div>
-<div _ngcontent-c9="" class="lib-row lib-desc">
-<div _ngcontent-c8="" class="exclusions">
-Please note that this plan does not include accidental death like:
-<ul _ngcontent-c8="">
-<li _ngcontent-c8="">Committing suicide.</li>
-<li _ngcontent-c8="">Committing or attempting to commit a criminal act.</li>
-<li _ngcontent-c8="">Operating a vehicle while your blood alcohol level is more than the legal limit.</li>
-<li _ngcontent-c8="">Being on any type of illegal drugs</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-        <a href [routerLink]="'/simulation/'+ product.category"> 
-            <button mat-raised-button color="warn">
-                 Make a free simulation
-            </button>
-        </a>
-      
 </ng-container>
+</div>
+
+<br><br>
+<!-- 
+<div class="container " 
+style="background-color: rgb(212, 138, 138);    min-width: -webkit-fill-available;">
+<div _ngcontent-c9="" class="row box-shadow  " >
+    <div _ngcontent-c9="" class="col-md-6">
+    <img _ngcontent-c9="" class="lib-img-show" style="width:80px" src="./assets\caution.png">
+    <div _ngcontent-c9="" class="lib-row lib-header text-warning">
+        Exclusions
+    <div _ngcontent-c9="" class="lib-header-seperator"></div>
+    </div>
+    <div _ngcontent-c9="" class="lib-row lib-desc">
+    <div _ngcontent-c8="" class="exclusions">
+        Please note that this plan does not include accidental death like:
+    <ul _ngcontent-c8="">
+        <li _ngcontent-c8="">Committing suicide.</li>
+        <li _ngcontent-c8="">Committing or attempting to commit a criminal act.</li>
+        <li _ngcontent-c8="">Operating a vehicle while your blood alcohol level is more than the legal limit.</li>
+        <li _ngcontent-c8="">Being on any type of ille
+    </ul>
+    </div>
+    </div>
+</div>
+</div>
+</div> -->
+ 
+
