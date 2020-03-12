@@ -1,16 +1,24 @@
+<div class="img container" 
+style="font-weight: bold;
+font-family: monospace;
+color:aliceblue;
+font-size: larger;">
+
+<div class="login-wrapper" 
+fxLayout="row"
+fxLayoutAlign="center center">
+
+<mat-card class="box">
+  
+ <mat-card-header>
+  <mat-card-title>Please answer all the questions</mat-card-title>
+</mat-card-header>
 
     <form class="col-md-12 simulation2" 
     (ngSubmit)="getSimulation2(f)" 
     #f="ngForm" 
     ngNativeValidate>
-
-            <div class="form-header-group  header-default">
-              <div class="header-text httal htvam">
-                <h2>
-                  Please answer all the questions
-                </h2>
-              </div>
-            </div>
+    <mat-card-content>
 
             <div>
                 <label>1. What is your age?</label>
@@ -135,9 +143,14 @@
                           </div>
                           <br>
                           <br>
-                
+                        </mat-card-content>       
 <button mat-raised-button color="primary" >
 Submit
 </button>
 
      </form>
+
+    </mat-card>
+
+  </div>
+</div>

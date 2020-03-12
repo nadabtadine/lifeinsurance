@@ -10,7 +10,7 @@ export class Product{
     constructor(id:number, name:string,description:string,price:number,logo:string,image:String,category:number){
         id=id;
         name=name;
-        description=description;
+        description=description;   
         price=price;
         logo=logo;
         image=image;

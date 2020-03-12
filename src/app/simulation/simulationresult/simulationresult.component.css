@@ -1,0 +1,64 @@
+#pricing{
+    width: 989px;
+    margin: 100px auto;
+    font-family: 'Open Sans', Helvetica;
+    text-align: -webkit-center;
+}
+
+.price_card{
+    width: 300px;
+    background: rgb(255, 255, 255);
+    display: inline-table;
+    top: 0;
+}
+.price_card:not(:last-child){
+    margin-right: 40px;
+}
+.header{
+    color: rgb(255, 255, 255);
+}
+.alpha .header{
+    background:rgb(221, 183, 134);
+}
+
+.price{
+    width: 100%;
+    font-size: 60px;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+    padding: 30px 0 10px;
+}
+.name{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    padding: 0 0 30px;
+}
+
+button{
+    color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 20px auto 35px;
+    border-radius: 20px;
+}
+.alpha button{
+    background: rgb(221, 183, 134);
+}
+
+ul.features{
+
+    background-color: antiquewhite;
+
+}
+
+

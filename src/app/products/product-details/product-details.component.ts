@@ -52,7 +52,9 @@ export class ProductDetailsComponent implements OnInit {
     });
  
     dialogRef.afterClosed().subscribe(() => {
+    //  if(){
       this.cartService.addProduct(this.p,this.customer$.value.id).subscribe();
+    //  }
     });
   }
 }

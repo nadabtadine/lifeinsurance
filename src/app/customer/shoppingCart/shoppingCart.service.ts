@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class ShoppingCartService{
   
  
-    private Url = 'http://localhost:9091/api';
+    private Url = 'http://localhost:9091/api4';
     constructor(private http: HttpClient) {
     }
     private addHeaders() {
@@ -26,10 +26,10 @@ export class ShoppingCartService{
 
     addProduct(p, cid):Observable<any> {
         return this.http.post(this.Url +`/shoppingcart/` +cid , p);
-    }
+    } 
 
-    // delete(pid) {
-    
-    // }
+    delete(cid,pid):Observable<any> {
+        return this.http.delete(this.Url+`/shoppingcart/` + cid +`/`+ pid);
+    }
 
 }

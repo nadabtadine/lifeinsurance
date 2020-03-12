@@ -1,0 +1,13 @@
+.img{
+    background-image: url(src/assets/credit-card.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.card{
+    background-color: #fff5f4;
+}
+.mt-5{
+        margin-top: 0rem!important;
+}

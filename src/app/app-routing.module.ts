@@ -19,8 +19,9 @@ import { Simulation3Component } from './simulation/simulation3/simulation3.compo
 import { Simulation2Component } from './simulation/simulation2/simulation2.component';
 import { Simulation4Component } from './simulation/simulation4/simulation4.component';
 import { SimulationresultComponent } from './simulation/simulationresult/simulationresult.component';
-import { InvoiceComponent } from './invoice/invoice.component';
 import { ShoppingCartComponent } from './customer/shoppingCart/shopppingCart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 const routes: Routes = [
   { path:'', component: MenuComponent},
@@ -34,10 +35,17 @@ const routes: Routes = [
   { path:'products', component: ProductsComponent},
   { path:'signin',component: SigninComponent},
   { path:'login' ,component: LoginComponent},
-  { path:'invoices' ,component: InvoiceComponent},
   { path:'shoppingcart' ,component: ShoppingCartComponent},
+  { path:'checkout' ,component: CheckoutComponent},
+  { path:'order' ,component: InvoiceComponent},
+  { path:'invoice' ,component: InvoiceComponent},
+
   { path:'shoppingcart/:id' ,component: ShoppingCartComponent},
+  { path:'checkout/:id' ,component: CheckoutComponent},
+  { path:'order/:id' ,component: InvoiceComponent},
   { path:'result/:response' ,component: SimulationresultComponent},
+  { path:'invoice/:id' ,component: InvoiceComponent},
+
   { path:'contactus',component: ContactusComponent},
   { path:'privacypolicy', component: PrivacypolicyComponent},
   { path: 'customer/:id', component: CustomerComponent },

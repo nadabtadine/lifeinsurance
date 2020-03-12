@@ -36,10 +36,15 @@ import { Simulation2Component } from './simulation/simulation2/simulation2.compo
 import { SimulationService } from './simulation/simulation.service';
 import { SimulationresultComponent } from './simulation/simulationresult/simulationresult.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { InvoiceService } from './invoice/invoice.service';
 import { ShoppingCartComponent } from './customer/shoppingCart/shopppingCart.component';
 import { ProductDetailsComponentDialog } from './products/product-details/product-details-dialog.component';
 import { ShoppingCartService } from './customer/shoppingCart/shoppingCart.service';
+import { SimulationresultComponentDialog } from './simulation/simulationresult/simulationresult-dialog.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { InvoiceService } from './invoice/invoice.service';
+import { CheckoutComponentDialog } from './checkout/checkout-dialog.component';
+import { OrderService } from './order/order.service';
 
 @NgModule({
   schemas: [
@@ -71,7 +76,11 @@ import { ShoppingCartService } from './customer/shoppingCart/shoppingCart.servic
     Simulation2Component,
     Simulation3Component,
     Simulation4Component,
-    ProductDetailsComponentDialog
+    ProductDetailsComponentDialog,
+    SimulationresultComponentDialog,
+    CheckoutComponentDialog,
+    CheckoutComponent,
+    InvoiceComponent
   ],
   
   imports: [
@@ -96,7 +105,8 @@ import { ShoppingCartService } from './customer/shoppingCart/shoppingCart.servic
   ],
 
   exports:[FilterPipe, AsyncPipe],
-  providers: [AccountcreationService,AccountverificationService,ProductService,SimulationService,InvoiceService,ShoppingCartService],
+  providers: [AccountcreationService,AccountverificationService,
+    ProductService,SimulationService,ShoppingCartService,InvoiceService,OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

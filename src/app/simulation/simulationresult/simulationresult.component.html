@@ -1,14 +1,26 @@
 
-<div>
-    <div style="
-    width: max-content;
-    height: 45px">
-     <span style="vertical-align: -webkit-baseline-middle">This is the total price based on your chosen entries:</span>
-    </div>
+ <div style="
+ width: max-content;
+ height: 45px;
+ margin-top: 30px;">
+  <span style="margin-left: 500px;
+  font-family: monospace;
+  font-weight: 700;">This is the total price based on your chosen entries:</span>
+ </div>
+<div id="pricing">
+  <div class="price_card alpha">
+      <div class="header">
+          <span class="price">{{r}} US</span>
+          <span class="name">Standard Pack</span>
+      </div>
+      <ul class="features">
+          <li>Includes Complete documentation</li>
+      </ul>
+      <ng-container *ngIf="customer$ | async">
+      <button (click)="add()">Add to cart</button></ng-container>
+  </div>
 </div>
-<div class="price">
-    <span>{{r}} US</span>
-</div>
+
 <br>
 <a 
 href="/contactus"

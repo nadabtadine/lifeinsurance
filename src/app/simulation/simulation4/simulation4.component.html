@@ -1,17 +1,28 @@
+<div class="img container" 
+style="font-weight: bold;
+font-family: monospace;
+color:aliceblue;
+font-size: larger;">
+
+<div class="login-wrapper" 
+fxLayout="row"
+fxLayoutAlign="center center">
+
+<mat-card class="box">
+  
+ <mat-card-header>
+  <mat-card-title>Please answer all the questions</mat-card-title>
+</mat-card-header>
+
 
  <form class="col-md-12 simulation4" 
  (ngSubmit)="getSimulation4(f)" 
  #f="ngForm" 
  ngNativeValidate>
 
-            <div class="form-header-group  header-default">
-              <div class="header-text httal htvam">
-                <h2>
-                  Please answer all the questions
-                </h2>
-              </div>
-            </div>
+            <mat-card-content>
 
+           
             <div>
                 <label>1. Please enter your total house number</label>
                 <br>
@@ -24,10 +35,10 @@
                 size="15" 
                 id="house" 
                 tabindex="-1">
-            </div>
-                <br>
+              </div><br>
+                
 
-                <div>
+                 <div>
                     <label>2. Please enter your total cars number</label>
                     <br>
                     <input type="text" 
@@ -39,8 +50,8 @@
                     size="15" 
                     id="car" 
                     tabindex="-1">
-                </div>
-                    <br>
+                  </div><br>
+                    
 
                     <div class="mb-3">
                         <label for="loans">3. Have you ever taken any banks loans?</label>
@@ -128,11 +139,13 @@
                                 tabindex="-1"> 
                                 </div>
                                 <br>
-              
+                              </mat-card-content>
             
-        <button mat-raised-button color="primary" >
-            Submit
-        </button>
+        <button mat-raised-button color="primary"
+        style="margin-bottom: 1rem;" >
+            Submit</button>
+        </form>
+  </mat-card>
 
-
-    </form>
+    </div>
+</div>
