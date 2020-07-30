@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SimulationService } from '../simulation.service';
 import { ProductService } from 'src/app/products/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AccountverificationService } from 'src/app/customer/accountverification.service';
 import { ShoppingCartService } from 'src/app/customer/shoppingCart/shoppingCart.service';
 import { Product } from 'src/app/products/product.model';
@@ -30,6 +30,7 @@ export class SimulationresultComponent implements OnInit {
   constructor(private service:SimulationService,
   private productService: ProductService, 
   private route: ActivatedRoute,
+  private router: Router,
     private accountVerificationService: AccountverificationService,
     private cartService:ShoppingCartService,
     public dialog: MatDialog,private http: HttpClient){}
@@ -57,5 +58,16 @@ export class SimulationresultComponent implements OnInit {
     //  }
     });
   }
+
+check(){
+  this.customer$ = this.accountVerificationService.current;
+  if(this.customer$.value){
+    this.router.navigateByUrl("/payment");
+  }
+  else{
+    this.router.navigateByUrl("/signup");
+  }
+}
+
 
 }

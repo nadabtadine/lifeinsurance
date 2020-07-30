@@ -27,7 +27,7 @@ export class ProductDetailsComponent implements OnInit {
   id:number;
   // productname:string;
   customer$: BehaviorSubject<Customer> = new BehaviorSubject(null);
-  private Url = 'http://localhost:9091/api';
+  private Url = 'http://localhost:9092/api';
   constructor( private productService: ProductService, private route: ActivatedRoute,
     private accountVerificationService: AccountverificationService,
     private cartService:ShoppingCartService,

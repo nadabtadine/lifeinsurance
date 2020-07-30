@@ -16,7 +16,7 @@ import { SigninComponent } from './signin/signin.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AccountcreationService } from './customer/accountcreation.service';
 import { CustomMaterialModule } from './customer-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,6 +45,15 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { InvoiceService } from './invoice/invoice.service';
 import { CheckoutComponentDialog } from './checkout/checkout-dialog.component';
 import { OrderService } from './order/order.service';
+import { I18nModule } from './i18n/i18n.module';
+import { SelectLanguageComponent } from './select-language/select-language.component';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PaymentComponent } from './payment/payment.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   schemas: [
@@ -80,7 +89,9 @@ import { OrderService } from './order/order.service';
     SimulationresultComponentDialog,
     CheckoutComponentDialog,
     CheckoutComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    SelectLanguageComponent,
+    PaymentComponent
   ],
   
   imports: [
@@ -95,6 +106,13 @@ import { OrderService } from './order/order.service';
     BrowserAnimationsModule,
     FlexLayoutModule,
     
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+  }),
     JwtModule.forRoot({
       config: {
         tokenGetter() {
@@ -102,11 +120,13 @@ import { OrderService } from './order/order.service';
         }
       }
     }),
+    
+    I18nModule,
   ],
 
   exports:[FilterPipe, AsyncPipe],
   providers: [AccountcreationService,AccountverificationService,
-    ProductService,SimulationService,ShoppingCartService,InvoiceService,OrderService],
+    ProductService,SimulationService,ShoppingCartService,InvoiceService,OrderService,TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

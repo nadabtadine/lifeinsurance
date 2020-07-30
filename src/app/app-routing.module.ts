@@ -22,6 +22,7 @@ import { SimulationresultComponent } from './simulation/simulationresult/simulat
 import { ShoppingCartComponent } from './customer/shoppingCart/shopppingCart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path:'', component: MenuComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
   { path:'checkout' ,component: CheckoutComponent},
   { path:'order' ,component: InvoiceComponent},
   { path:'invoice' ,component: InvoiceComponent},
-
+  { path:'payment' ,component: PaymentComponent},
   { path:'shoppingcart/:id' ,component: ShoppingCartComponent},
   { path:'checkout/:id' ,component: CheckoutComponent},
   { path:'order/:id' ,component: InvoiceComponent},

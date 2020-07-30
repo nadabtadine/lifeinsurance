@@ -24,7 +24,7 @@ export class SigninComponent implements OnInit {
     name = name.trim();
     age=age;
     address = address.trim();
-    gender = gender;
+    gender = gender.trim();
     phone_number = phone_number.trim();
     email = email.trim();
     username = username.trim();
@@ -33,7 +33,7 @@ export class SigninComponent implements OnInit {
     if (!name && !email) {
       return;
     }
-    this.cs.register({ name, age, gender, address, phone_number, email, username, password } as unknown  as Customer)
+    this.cs.register({ name, age, gender, address, phone_number, email, username, password } as unknown as Customer)
       .subscribe( () => this.back());
       this.router.navigateByUrl("");
    }
